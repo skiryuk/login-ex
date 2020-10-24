@@ -1,0 +1,9 @@
+
+.ant-btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  &[disabled] {
+    background-color: var(--light-gray);
+    border-color: var(--medium-gray);
+  }
+}

@@ -1,0 +1,32 @@
+<div class="login">
+  <div class="login__title">Вход</div>
+  <div class="login__card">
+    <form class="login__form" [formGroup]="loginForm" novalidate>
+      <nz-form-item>
+        <nz-form-label class="field__label">Номер телефона</nz-form-label>
+        <nz-form-control>
+          <nz-input-group nzSize="large" nzPrefix="+7">
+            <input type="text" nz-input autocomplete="off" formControlName="login" mask="(000) 000-0000"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label class="field__label">Пароль</nz-form-label>
+        <nz-form-control nzErrorTip="Пароль от 5 символов">
+          <nz-input-group nzSize="large">
+            <input nz-input type="password" formControlName="password" autocomplete="off" maxlength="20"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <button class="login__button"
+              nz-button
+              nzSize="large"
+              nzType="primary"
+              [disabled]="!loginForm.valid"
+              (click)="onLogin()">Войти
+      </button>
+    </form>
+  </div>
+</div>

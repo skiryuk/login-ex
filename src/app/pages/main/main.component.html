@@ -1,0 +1,18 @@
+<div class="main-toolbar">
+  <div class="caption">
+    <div class="back-button" (click)="onBack()">
+      <i nz-icon nzType="arrow-left" nzTheme="outline" title="Назад" *ngIf="isVisibleBackButton$ | async"></i>
+    </div>
+    <div class="title-label">Панель администратора</div>
+  </div>
+  <div class="user-info">
+    <div class="user-name" *ngIf="userName as name">{{ name }}</div>
+    <div class="logout-icon" (click)="onLogout()" title="Выйти">
+      <i nz-icon nzType="logout" nzTheme="outline"></i>
+    </div>
+  </div>
+</div>
+
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
